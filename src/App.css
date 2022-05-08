@@ -1,38 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F2F2F2;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* LANDING PAGE CSS */
+
+.LandingPage {
+  display: block;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  box-shadow: 7px 10px 34px -1px rgba(0,0,0,0.19);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.LandingPage-container {
+  padding: 90px 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.detailsOne h1 {
+  font-size: 35px;
+  color: #2C2C2C;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.detailsOne label {
+  color: #2C2C2C;
+  font-weight: 400;
+}
+
+.detailsOne img {
+  width: 18px;
+}
+
+.detailsOne input {
+  margin: 20px;
+  appearance: none;
+  width: 250px;
+  height: 4px;
+  background-color: #DAA24F;
+  border-radius: 20px;
+  margin-bottom: 35px;
+}
+
+.detailsOne input::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #DAA24F;
+  border-radius: 20px;
+}
+
+.detailsTwo  {
+  display: block;
+}
+
+.detailsTwo button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  border: 0;
+  background-color: #DAA24F;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 60px;
+  border-radius: 2px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.detailsTwo button:hover {
+  background-color: #BE8D46;
+}
+
+.detailsTwo select {
+  padding: 2px 30px;
+  border-radius: 4px;
+  border-width: 1.2px;
+  outline: #BE8D46;
+}
+
+.detailsTwo select option {
+  text-align: center;
+}
+
+.dropSelect {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.dropSelect h3 {
+  font-weight: 400;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* SPEAKING GAME PAGE CSS */
+
+.SpeakingGame {
+  padding: 80px;
+  display: block;
+}
+
+.game-words {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .game-words {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.randomWords h1 {
+  font-weight: 300;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.randomWords span {
+  font-weight: 500;
+  margin-right: 9px;
+}
+
+.helperHidden {
+  visibility: hidden;
+}
+
+.helperList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.helperList h3 {
+  color: #2C2C2C;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.helperList input[type=checkbox] {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkBox {
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 2px;
+  position: absolute;
+  transform: translateX(-100px);
+}
+
+.checkBox img {
+  width: 14px;
+  margin-bottom: 5px;
+}
+
+.helperList input[type=checkbox]:checked ~ .checkBox {
+  background-color: black;
+}
+
+#ready-label {
+  color: #2C2C2C;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-top: 250px;
+}
+
+.game-details button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 120px;
+  transition: 0.3s ease-in-out;
+}
+
+.game-details button:hover {
+  transform: scale(1.09);
+}
+
+.replayButton img {
+  width: 120px;
+  margin-bottom: 18px;
+}
+
+.homeButton img {
+  width: 180px;
+}
+
+.homeButton {
+  margin-left: 35px;
+}
+
+/* TIMER */
+.normalText {
+  font-weight: 500;
+  font-size: 35px;
+  color: #2C2C2C;
+  position: absolute;
+  transform: translateY(108px);
+}
+
+@keyframes timerAnimation {
+  0% {
+    color: #2C2C2C;
   }
+  50% {
+    color: #DAA24F;
+  }
+  100% {
+    color: #2C2C2C;
+  }
+}
+
+.redText {
+  font-weight: 500;
+  font-size: 35px;
+  color: #DAA24F;
+  position: absolute;
+  transform: translateY(108px);
+  animation: timerAnimation 1.7s infinite;
+}
+
+.game-timer {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0 60px 0;
 }
